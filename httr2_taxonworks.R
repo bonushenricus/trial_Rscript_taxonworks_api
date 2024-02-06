@@ -9,7 +9,6 @@ library(httr2)
 key <- secret_make_key()
 #encripte token
 secret_scrambled <- secret_encrypt("qUEQWyR8_8MGxM9GGQxM4w", key) #what is my token? I read it from my account dashboard
-secret_scrambled <- secret_encrypt("mVY5aWD-vLsfAxDGQeWaJA", key)
 
 #From this point it is instead to be done every time
 library(httr2)
@@ -25,3 +24,7 @@ taxon_names_id <- function(...) {
     resp_body_json()
 }
 taxon_names_id(name="Eurytoma%20morio")
+#Result: 
+##Error in `req_perform()`:
+##! HTTP 401 Unauthorized.
+#where did I go wrong? Is the project ID missing? I don't think so, it should already be included in the token
