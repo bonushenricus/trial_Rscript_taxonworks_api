@@ -4,8 +4,8 @@ library(httr2)
 library(tidyverse)
 
 #Define access token
-access_token_taxonworks_sandfly = "qUEQWyR8_8MGxM9GGQxM4w"
-project_token_taxonworks_sandfly = "mVY5aWD-vLsfAxDGQeWaJA"
+access_token_taxonworks_sandfly = TAXONWORKS_TOKEN
+project_token_taxonworks_sandfly = TAXONWORKS_PROJECT_TOKEN
 
 #Define base urls
 base_url_taxonworks_sandfly = "https://sandfly.taxonworks.org/api/v1"
