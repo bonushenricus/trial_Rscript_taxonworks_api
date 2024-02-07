@@ -20,12 +20,15 @@ req_bioass_sandfly = request(base_url_taxonworks_sandfly) %>%
   req_url_query(project_token=project_token_taxonworks_sandfly) #the project_token is necessary to authorize the request
 
 #Define query
+#Define query
 req_bioass_sandfly_query = req_bioass_sandfly %>%
   req_url_query(
-    "object_taxon_name_id[]"=474243,
-    #    biological_relationship_id="12",
-    "biological_relationship_id[]"=12)
-#integer array in httr2? I post an issue https://github.com/r-lib/httr2/issues/436
+    "subject_taxon_name_id[]"=474243) %>%
+  req_url_query(
+    "biological_relationship_id[]"=13) %>% #13 is the "parasitoid host relationship"
+  req_url_query(
+    taxon_name_id_mode="true")
+#title of integer array in httr2 into ""
 
 #Provide access token via header
 req_bioass_sandfly_query_auth = req_bioass_sandfly_query %>%
